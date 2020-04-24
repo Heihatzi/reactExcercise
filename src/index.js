@@ -19,7 +19,7 @@ function Box( props ){
       <p>Prop color: { props.color }</p>
       <p className="box">A Box! { random * 1000 }</p>
       <p>Time is { getTime() }</p>
-      <div style={styles}>Children: { props.children && props.children[1] }</div>
+      <div style={styles}>Children1212: { props.children && props.children[1] }</div>
     </>
   );
 }
@@ -32,7 +32,7 @@ function App(){
       <h2>Subtitle</h2>
       <p>Paragraph</p>
       <Box color="tomato" />
-      <Box color="indigo">Box <strong>No2</strong></Box>
+      <Box color="indigo">Box <strong>No245</strong></Box>
       <Box text="OMG">Box <em>No3</em></Box>
     </>
     );
