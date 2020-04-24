@@ -1,17 +1,44 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react';
 
+
+
+function getTime() {
+  const date = new Date();
+
+  return date.getHours() + ":" + date.getMinutes();
+}
+// <Box></Box>
+function Box( props ){
+  const random = Math.random();
+  const styles = { border: "2px solid gray", backgroundColor: props.color, color: "white" }
+  console.log( props );
+  return (
+    <>
+      <hr/>
+      <p>Prop color: { props.color }</p>
+      <p className="box">A Box! { random * 1000 }</p>
+      <p>Time is { getTime() }</p>
+      <div style={styles}>Children: { props.children && props.children[1] }</div>
+    </>
+  );
+}
+
+// <App></App>
+function App(){
+  return (
+    <>
+      <h1>App! <mark>JS</mark></h1>
+      <h2>Subtitle</h2>
+      <p>Paragraph</p>
+      <Box color="tomato" />
+      <Box color="indigo">Box <strong>No2</strong></Box>
+      <Box text="OMG">Box <em>No3</em></Box>
+    </>
+    );
+}
+//ReactDOM.render(WHAT, WHERE);
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <App></App>,
+  document.getElementById("root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
